@@ -82,3 +82,7 @@ echo $post->sub_title;
 ```
 
 Please note currently for Laravel 7+ until tested and verified in lower versions.
+
+### TODO
+
+- Add in support for querying easily against Virtual Fields without JSON query requirement.
