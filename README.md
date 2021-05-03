@@ -53,7 +53,7 @@ public function up()
 public function down()
 {
     Schema::table('{table}', function (Blueprint $table) {
-        $table->dropColumn(['resource_link']);
+        $table->dropColumn(['data']);
     });
 }
 ```
