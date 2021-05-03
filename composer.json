@@ -1,0 +1,28 @@
+{
+  "name": "jsefton/laravel-virtual-fields",
+  "type": "library",
+  "description": "Allow eloquent models to store and retreive data against anything without needing a specific database column",
+  "keywords": ["laravel","data","eloquent","virtual","fields","schema"],
+  "homepage": "https://endor.digital",
+  "license": "MIT",
+  "repositories":[],
+  "require": {
+      "laravel/framework": ">=7.0"
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "tests",
+      "tests/*.*",
+      "phpunit.xml",
+      ".gitignore",
+      ".gitattributes",
+      "README.md"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "JSefton\\VirtualFields\\": "src/"
+    }
+  }
+}
