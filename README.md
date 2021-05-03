@@ -59,3 +59,26 @@ public function down()
 ```
 
 The reason for `data` field to be a `longText` is to support long term usage of Virtual Fields. If you keep adding new data to store via Virtual Fields it will end up with a large JSON object within this column. If you know it is only going to be used for a small amount of data then please make your migration use a suitable data type.
+
+## Example
+
+Once setup you can simply use normal attribute getting & setting against a model. This will automatically be handled when being saved into the database againt the model and converted back to actual attributes on query.
+
+In this example we have a Post and a virtual field of `sub_title`. This field does not exist as a physical field in the database schema.
+```php
+$post = Post::find(1);
+
+// Set a virtual field of sub_title
+$post->sub_title = 'Example post sub title';
+$post->save();
+```
+The `sub_title` will be saved in the `data` field mapped as an array with `sub_title` key and `Example post sub title` as a value.
+
+When you want to get the value back out to use you simply use it like any normal eloquent attribute:
+
+```php
+echo $post->sub_title;
+// outputs: Example post sub title
+```
+
+Please note currently for Laravel 7+ until tested and verified in lower versions.
